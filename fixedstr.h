@@ -119,6 +119,9 @@ const char *fstr_ptr(const struct fstr *inst);
 /* Get pointer to buffer (empty string if null) */
 const char *fstr_get(const struct fstr *inst);
 
+/* Chat at pos (NULL char if out of range) */
+char fstr_at(const struct fstr *inst, size_t pos);
+
 /* Will copy data in if instance is a reference */
 char *fstr_get_mutable(struct fstr *inst);
 

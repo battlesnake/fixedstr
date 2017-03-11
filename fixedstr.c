@@ -80,6 +80,11 @@ void fstr_break_ref(struct fstr *inst)
 	memcpy(fstr_buf(inst), data, len);
 }
 
+char fstr_at(const struct fstr *inst, size_t pos)
+{
+	return pos < fstr_len(inst) ? fstr_cbuf(inst)[pos] : 0;
+}
+
 void fstr_destroy(struct fstr *inst)
 {
 	if (inst->owns) {
